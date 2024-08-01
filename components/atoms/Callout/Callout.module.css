@@ -1,0 +1,24 @@
+.callout {
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.primary {
+  background-color: #0056b3;
+  color: white;
+}
+
+.secondary {
+  background-color: #545b62;
+  color: white;
+}
+
+.danger {
+  background-color: #c82333;
+  color: white;
+}
+
+.success {
+  background-color: #218838;
+  color: white;
+}
