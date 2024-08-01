@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 import styles from "./Button.module.css";
 
@@ -16,7 +17,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        className={`${styles.button} ${styles[variant]}`}
+        className={classNames(styles.button, styles[variant])}
         disabled={disabled || loading}
         {...props}
       >
