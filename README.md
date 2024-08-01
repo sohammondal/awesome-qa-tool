@@ -70,14 +70,14 @@ awesome-qa-tool
 
 ## Branch ↔ Environments
 
-- `stage` → [stage](https://stage.awesome-qa-tool.sohammondal.com)
+- `stage` → [stage](https://stage-awesome-qa-tool.sohammondal.com)
 - `main` → [production](https://awesome-qa-tool.sohammondal.com)
 
-## Hosting & Deployment
+## Hosting & Deployment ☁️
 
 The app is hosted on AWS and deployed using [AWS Amplify](https://docs.amplify.aws/nextjs/)
 
-## Learn More
+## Learn More 📚
 
 To learn more about Next.js, take a look at the following resources:
 
