@@ -1,0 +1,23 @@
+.container {
+  margin-bottom: 1rem;
+}
+
+.textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+  margin: 0.25rem 0;
+}
+
+.textarea:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.errorInput {
+  border-color: #dc3545;
+}
