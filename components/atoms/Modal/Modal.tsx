@@ -5,7 +5,7 @@ import styles from "./Modal.module.css";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  title?: string;
+  title?: React.ReactNode;
   footer?: React.ReactNode;
   children: React.ReactNode;
 }
