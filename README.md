@@ -66,6 +66,7 @@ awesome-qa-tool
 |-- seo             ← app meta data
 |-- config          ← app config / env variables
 |-- theme           ← app theme or global styles
+|-- helpers         ← helper functions
 ```
 
 ## Branch ↔ Environments
