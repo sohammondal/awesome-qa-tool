@@ -1,7 +1,8 @@
 import { useDispatch, useSelector, useStore } from "react-redux";
 
-import { config } from "@app/config";
 import { configureStore } from "@reduxjs/toolkit";
+
+import { config } from "@app/config";
 
 import { rootReducer } from "./reducers";
 
