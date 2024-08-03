@@ -87,6 +87,7 @@ export const AddQuestionModal: React.FC<AddQuestionModalProps> = ({
         </div>
         <div>
           <Button
+            aria-label="Save"
             variant="primary"
             type="submit"
             loading={isSubmitting}
