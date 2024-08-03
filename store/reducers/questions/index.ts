@@ -1,5 +1,6 @@
-import { Question } from "@app/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+import { Question } from "@app/types";
 
 import { addQuestion, editQuestion } from "./thunks";
 
