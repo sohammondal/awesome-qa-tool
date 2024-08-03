@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Callout } from "@app/components/atoms/Callout";
+import { Typography } from "@app/components/atoms/Typography";
 import { QuestionItem } from "@app/modules/Questions/QuestionItem/QuestionItem";
 import { useAppSelector } from "@app/store";
 import { selectQuestions } from "@app/store/reducers/questions";
@@ -12,7 +12,11 @@ export const QuestionsList = () => {
 
   return (
     <section className={styles.questions}>
-      {!questions.length && <Callout variant="danger">No questions :(</Callout>}
+      {!questions.length && (
+        <Typography variant="body1" color="red">
+          No questions :(
+        </Typography>
+      )}
       {questions.map((question) => (
         <QuestionItem key={question.id} question={question} />
       ))}
