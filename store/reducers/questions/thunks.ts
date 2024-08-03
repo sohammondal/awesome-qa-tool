@@ -1,7 +1,8 @@
+import { createAsyncThunk } from "@reduxjs/toolkit";
+
 import { sleep } from "@app/helpers/sleep";
 import { generateUniqueId } from "@app/helpers/uniqueId";
 import { Question } from "@app/types";
-import { createAsyncThunk } from "@reduxjs/toolkit";
 
 interface AddQuestionPayload {
   question: Omit<Question, "id">;

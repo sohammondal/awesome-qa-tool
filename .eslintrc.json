@@ -31,6 +31,10 @@
               [
                 "^@"
               ],
+              // Internal packages starting with `@app`
+              [
+                "^@app"
+              ],
               // Packages starting with `~`
               [
                 "^~"

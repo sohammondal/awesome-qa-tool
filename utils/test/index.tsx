@@ -1,10 +1,11 @@
 import React, { ReactElement } from "react";
 import { Provider } from "react-redux";
 
-import { RootState } from "@app/store";
-import { rootReducer } from "@app/store/reducers";
 import { configureStore } from "@reduxjs/toolkit";
 import { render, RenderOptions } from "@testing-library/react";
+
+import { RootState } from "@app/store";
+import { rootReducer } from "@app/store/reducers";
 
 import "@testing-library/jest-dom";
 
