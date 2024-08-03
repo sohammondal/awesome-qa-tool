@@ -6,21 +6,38 @@
 
 .pageLayoutInner {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding: 2rem;
   gap: 2rem;
-  max-width: 1024px;
+  width: 100%;
 }
 
 .aside {
-  max-width: 25%;
+  max-width: 100%;
 }
 
 .separator {
+  display: none;
   width: 0.5px;
   background-color: #adadad;
 }
 
 .heading {
   text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .pageLayoutInner {
+    flex-direction: row;
+    padding: 2rem;
+    max-width: 1024px;
+  }
+
+  .aside {
+    max-width: 25%;
+  }
+
+  .separator {
+    display: block;
+  }
 }

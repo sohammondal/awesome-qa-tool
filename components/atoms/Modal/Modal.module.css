@@ -16,7 +16,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   max-width: 500px;
-  width: 100%;
+  width: 90%;
   position: relative;
 }
 
@@ -46,4 +46,10 @@
   padding-top: 0.5rem;
   display: flex;
   justify-content: flex-end;
+}
+
+@media screen and (min-width: 1024px) {
+  .modal {
+    width: 100%;
+  }
 }

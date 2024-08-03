@@ -23,7 +23,7 @@ export const PageLayout: React.FC<PageLayoutProps> = ({
       <div className={styles.pageLayoutInner}>
         <aside className={styles.aside}>{sidebar}</aside>
         <div className={styles.separator} />
-        <main className={styles.main}> {children}</main>
+        <main className={styles.main}>{children}</main>
       </div>
     </div>
   );
