@@ -1,3 +1,1 @@
-export default function Home() {
-  return <main>Awesome QA Tool</main>;
-}
+export { Home as default } from "@app/views/Home";

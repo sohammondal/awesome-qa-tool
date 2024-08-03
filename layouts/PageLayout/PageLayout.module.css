@@ -1,0 +1,26 @@
+.pageLayoutOuter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pageLayoutInner {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  max-width: 1024px;
+}
+
+.aside {
+  max-width: 25%;
+}
+
+.separator {
+  width: 0.5px;
+  background-color: #adadad;
+}
+
+.heading {
+  text-align: center;
+}
