@@ -72,6 +72,7 @@ awesome-qa-tool
 |-- types           ← types & interfaces
 |-- hooks           ← reusable hooks
 |-- modules         ← feature centric components, helpers, etc which can reused all across the app
+|-- views           ← building block of `app/pages`
 ```
 
 ## Branch ↔ Environments

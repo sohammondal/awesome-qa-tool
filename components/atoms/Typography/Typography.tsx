@@ -19,6 +19,7 @@ export interface TypographyProps {
   component?: React.ElementType;
   color?: string;
   children: React.ReactNode;
+  className?: string;
 }
 
 const DefaultVariantComponent: Record<
