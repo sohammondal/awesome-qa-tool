@@ -59,7 +59,11 @@ export const EditQuestionModal: React.FC<EditQuestionModalProps> = ({
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="Edit Question">
-      <form name="editQuestionForm" className={styles.form}>
+      <form
+        name="editQuestionForm"
+        className={styles.form}
+        aria-label="editQuestionForm"
+      >
         <div>
           <TextInput
             label="Question"

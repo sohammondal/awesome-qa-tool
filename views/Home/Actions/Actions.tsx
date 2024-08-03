@@ -29,13 +29,14 @@ export const Actions = () => {
   return (
     <React.Fragment>
       <section className={styles.actions}>
-        <Button variant="success" onClick={open}>
+        <Button variant="success" onClick={open} aria-label="Add Question">
           Add Question
         </Button>
         <Button
           disabled={questions.length < 2}
           variant="primary"
           onClick={handleSort}
+          aria-label="Sort Questions"
         >
           Sort Questions
         </Button>
@@ -43,6 +44,7 @@ export const Actions = () => {
           variant="danger"
           disabled={!questions.length}
           onClick={handleDeleteAll}
+          aria-label="Remove Questions"
         >
           Remove Questions
         </Button>

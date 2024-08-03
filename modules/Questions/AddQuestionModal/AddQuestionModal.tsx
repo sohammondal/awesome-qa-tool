@@ -55,7 +55,11 @@ export const AddQuestionModal: React.FC<AddQuestionModalProps> = ({
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="Create a new Question">
-      <form name="addQuestionForm" className={styles.form}>
+      <form
+        name="addQuestionForm"
+        className={styles.form}
+        aria-label="addQuestionForm"
+      >
         <div>
           <TextInput
             label="Question"
