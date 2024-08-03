@@ -70,6 +70,7 @@ awesome-qa-tool
 |-- store           ← redux store
 |   |-- reducers    ← reducers/slices/features
 |-- types           ← types & interfaces
+|-- hooks           ← reusable hooks
 ```
 
 ## Branch ↔ Environments
