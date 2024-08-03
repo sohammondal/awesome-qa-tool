@@ -67,6 +67,9 @@ awesome-qa-tool
 |-- config          ← app config / env variables
 |-- theme           ← app theme or global styles
 |-- helpers         ← helper functions
+|-- store           ← redux store
+|   |-- reducers    ← reducers/slices/features
+|-- types           ← types & interfaces
 ```
 
 ## Branch ↔ Environments
