@@ -21,7 +21,7 @@ export const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
         >
           ▶
         </span>
-        <div>{title}</div>
+        {title}
       </div>
       <div
         className={classNames(styles.contentCollapsed, {
