@@ -1,0 +1,10 @@
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title .actions {
+  display: flex;
+  gap: 4px;
+}
