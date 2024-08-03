@@ -37,6 +37,7 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({ question }) => {
               <Button
                 variant="secondary"
                 kind="text"
+                aria-label="Edit"
                 onClick={(e) => {
                   e.stopPropagation();
                   handleOpenModal();
@@ -47,6 +48,7 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({ question }) => {
               <Button
                 variant="danger"
                 kind="text"
+                aria-label="Delete"
                 onClick={(e) => {
                   e.stopPropagation();
                   handleDelete();
