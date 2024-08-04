@@ -16,7 +16,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
   placement = "top",
   withArrow = false,
 }) => {
-  const [isTooltipOpen, setIsTooltipOpen] = useState(true);
+  const [isTooltipOpen, setIsTooltipOpen] = useState(false);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
 
