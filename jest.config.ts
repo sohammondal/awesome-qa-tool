@@ -18,11 +18,12 @@ const config: Config = {
   coverageProvider: "v8",
   coverageDirectory: "./reports/coverage",
   coverageReporters: ["json", "html"],
-  coveragePathIgnorePatterns: ["<rootDir>/utils/test/"],
+  coveragePathIgnorePatterns: ["<rootDir>/utils/test/", "<rootDir>/e2e-tests/"],
 
   testEnvironment: "jsdom",
 
-  testPathIgnorePatterns: ["/reports/", "/utils/test/"],
+  testPathIgnorePatterns: ["/reports/", "/utils/test/", "/e2e-tests"],
+
   watchPathIgnorePatterns: ["./reports/"],
 
   reporters: [
