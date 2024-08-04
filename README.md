@@ -28,6 +28,12 @@ npm run lint
 
 ## fix all linting issues
 npm run lint:fix
+
+## run unit tests
+npm run test
+
+## run unit tests in watch mode
+npm run test:watch
 ```
 
 You can view the app in your browser at [http://localhost:3000](http://localhost:3000).
@@ -73,6 +79,36 @@ awesome-qa-tool
 |-- hooks           ← reusable hooks
 |-- modules         ← feature centric components, helpers, etc which can reused all across the app
 |-- views           ← building block of `app/pages`
+|-- e2e-tests       ← Playwright tests
+```
+
+## Testing
+
+> [!NOTE]
+> We have unit, integration and e2e tests for this app.
+
+### Unit & Integration Tests
+
+```bash
+## run unit tests
+npm run test
+
+## run unit tests in watch mode
+npm run test:watch
+```
+
+### E2E Tests
+
+> [!NOTE]
+> E2E Tests are powered by [Playwright](https://playwright.dev/).
+> You can also setup [VS Code with Playwright](https://playwright.dev/docs/getting-started-vscode) for easy execution of tests.
+
+```bash
+## install browsers
+npx playwright install
+
+## run tests
+npx playwright test
 ```
 
 ## Branch ↔ Environments
