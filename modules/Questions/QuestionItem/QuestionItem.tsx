@@ -2,6 +2,7 @@ import React from "react";
 
 import { Accordion } from "@app/components/atoms/Accordion";
 import { Button } from "@app/components/atoms/Button";
+import { Tooltip } from "@app/components/atoms/Tooltip";
 import { useToggleState } from "@app/hooks/useToggleState";
 import { useAppDispatch } from "@app/store";
 import { questionsSliceActions } from "@app/store/reducers/questions";
@@ -34,28 +35,38 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({ question }) => {
           <div className={styles.title}>
             {question.text}
             <div className={styles.actions}>
-              <Button
-                variant="secondary"
-                kind="text"
-                aria-label="Edit"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleOpenModal();
-                }}
+              <Tooltip
+                placement="left"
+                content="You can edit this question using this"
               >
-                Edit
-              </Button>
-              <Button
-                variant="danger"
-                kind="text"
-                aria-label="Delete"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleDelete();
-                }}
+                <Button
+                  variant="secondary"
+                  kind="text"
+                  aria-label="Edit"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleOpenModal();
+                  }}
+                >
+                  Edit
+                </Button>
+              </Tooltip>
+              <Tooltip
+                placement="bottom"
+                content="You can delete this question using this"
               >
-                Delete
-              </Button>
+                <Button
+                  variant="danger"
+                  kind="text"
+                  aria-label="Delete"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleDelete();
+                  }}
+                >
+                  Delete
+                </Button>
+              </Tooltip>
             </div>
           </div>
         }

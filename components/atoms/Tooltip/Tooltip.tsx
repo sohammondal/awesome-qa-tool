@@ -1,43 +1,67 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 
 import styles from "./Tooltip.module.css";
 
-export interface TooltipProps {
-  direction: "top" | "right" | "bottom" | "left";
+interface TooltipProps {
+  placement: "top" | "right" | "bottom" | "left";
   content: React.ReactNode;
   children: React.ReactNode;
+  withArrow?: boolean;
 }
 
 export const Tooltip: React.FC<TooltipProps> = ({
-  direction,
-  content,
   children,
+  content,
+  placement = "top",
+  withArrow = false,
 }) => {
-  const [visible, setVisible] = React.useState(false);
+  const [isTooltipOpen, setIsTooltipOpen] = useState(true);
+  const tooltipRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
 
-  const showTooltip = () => setVisible(true);
-  const hideTooltip = () => setVisible(false);
+  const handleMouseEnter = () => {
+    setIsTooltipOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsTooltipOpen(false);
+  };
+
+  useEffect(() => {
+    const handleGlobalClick = (event: MouseEvent) => {
+      if (
+        triggerRef.current &&
+        !triggerRef.current.contains(event.target as Node) &&
+        !tooltipRef.current?.contains(event.target as Node)
+      ) {
+        setIsTooltipOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleGlobalClick);
+
+    return () => {
+      document.removeEventListener("click", handleGlobalClick);
+    };
+  }, []);
 
   return (
-    <div className={styles.tooltipContainer}>
-      <div
-        className={styles.target}
-        onMouseEnter={showTooltip}
-        onMouseLeave={hideTooltip}
-        onFocus={showTooltip}
-        onBlur={hideTooltip}
-        tabIndex={0}
-      >
-        {children}
-      </div>
-      {visible && (
-        <div className={classNames(styles.tooltip, styles[direction])}>
+    <div
+      ref={triggerRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {children}
+      {isTooltipOpen && (
+        <div
+          ref={tooltipRef}
+          className={classNames(styles.tooltip, styles[placement])}
+        >
+          {withArrow && <div className={styles.tooltipArrow}></div>}
           {content}
         </div>
       )}
     </div>
   );
 };
-
-export default Tooltip;
