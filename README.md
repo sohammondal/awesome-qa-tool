@@ -8,6 +8,7 @@
 [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![ESLint](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)
 [![Husky](https://img.shields.io/static/v1?label=husky&message=%F0%9F%90%B6&style=for-the-badge&color=161E54&labelColor=161E54)](https://typicode.github.io/husky/#/)
+[![Playwright](https://img.shields.io/static/v1?label=Playwright&message=🎭&style=for-the-badge&color=45ba4b&labelColor=45ba4b)](https://playwright.dev/)
 [![Commitizen](https://img.shields.io/static/v1?label=Commitizen&message=%E2%9C%94&style=for-the-badge&color=gray)](https://commitizen.github.io/cz-cli/)
 [![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://docs.amplify.aws/nextjs/)
 
