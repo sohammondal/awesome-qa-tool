@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Typography } from "@app/components/atoms/Typography";
+import { Typography } from "@app/components/Typography";
 import { QuestionItem } from "@app/modules/Questions/QuestionItem/QuestionItem";
 import { useAppSelector } from "@app/store";
 import { selectQuestions } from "@app/store/reducers/questions";
@@ -13,13 +13,17 @@ export const QuestionsList = () => {
   return (
     <section className={styles.questions}>
       {!questions.length && (
-        <Typography variant="body1" color="red">
+        <Typography variant="body1" color="danger">
           No questions :(
         </Typography>
       )}
-      {questions.map((question) => (
-        <QuestionItem key={question.id} question={question} />
-      ))}
+      <ul>
+        {questions.map((question) => (
+          <li key={question.id}>
+            <QuestionItem question={question} />
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };
