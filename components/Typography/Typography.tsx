@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 import styles from "./Typography.module.css";
 
@@ -17,7 +18,7 @@ export interface TypographyProps {
     | "caption"
     | "overline";
   component?: React.ElementType;
-  color?: string;
+  color?: "default" | "success" | "info" | "warning" | "danger";
   children: React.ReactNode;
   className?: string;
 }
@@ -43,13 +44,18 @@ const DefaultVariantComponent: Record<
 export const Typography: React.FC<TypographyProps> = ({
   variant,
   component,
-  color = "inherit",
+  color = "default",
   children,
   ...props
 }) => {
   const Component = component || DefaultVariantComponent[variant] || "span";
+
   return (
-    <Component className={styles[variant]} style={{ color }} {...props}>
+    <Component
+      className={classNames(styles[variant], styles[color])}
+      style={{ color }}
+      {...props}
+    >
       {children}
     </Component>
   );

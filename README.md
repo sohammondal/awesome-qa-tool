@@ -67,7 +67,7 @@ git commit # it will trigger Commitizen cli for generating commit message
 awesome-qa-tool
 |-- layouts         ← page or root layouts
 |-- public          ← contains assets like img, fonts, etc
-|-- components      ← reusable atoms
+|-- components      ← reusable components
 |-- app             ← routes and pages
 |-- seo             ← app meta data
 |-- config          ← app config / env variables
