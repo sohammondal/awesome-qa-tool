@@ -82,3 +82,23 @@
   letter-spacing: 0.08333em;
   text-transform: uppercase;
 }
+
+.default {
+  color: inherit;
+}
+
+.danger {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+.info {
+  color: blue;
+}
+
+.warning {
+  color: yellow;
+}
