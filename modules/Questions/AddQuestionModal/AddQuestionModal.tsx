@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Button } from "@app/components/atoms/Button";
-import { Checkbox } from "@app/components/atoms/Checkbox";
-import { TextField, TextInput } from "@app/components/atoms/Input";
-import { Modal, ModalProps } from "@app/components/atoms/Modal";
+import { Button } from "@app/components/Button";
+import { Checkbox } from "@app/components/Checkbox";
+import { TextField, TextInput } from "@app/components/Input";
+import { Modal, ModalProps } from "@app/components/Modal";
 import { Errors, useForm } from "@app/hooks/useForm";
 import { useAppDispatch } from "@app/store";
 import { addQuestion } from "@app/store/reducers/questions";
@@ -35,6 +35,10 @@ export const AddQuestionModal: React.FC<AddQuestionModalProps> = ({
         const errors: Errors<AddQuestionFormValues> = {};
         if (!values.text) errors.text = "Required";
         if (!values.answer) errors.answer = "Required";
+
+        if (!values.answer.trim()) {
+          errors.answer = "Cannot be empty spaces";
+        }
 
         if (values.text && !values.text.endsWith("?"))
           errors.text = 'Question should end with "?"';
