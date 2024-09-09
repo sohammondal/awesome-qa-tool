@@ -1,8 +1,8 @@
 import { ChangeEvent } from "react";
 
-import { renderHook, act } from "@app/utils/test";
+import { act, renderHook } from "@app/utils/test";
 
-import { useForm, Errors } from "./useForm";
+import { Errors, useForm } from "./useForm";
 
 type FormValues = {
   text: string;
