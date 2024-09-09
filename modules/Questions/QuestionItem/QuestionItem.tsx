@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Accordion } from "@app/components/atoms/Accordion";
-import { Button } from "@app/components/atoms/Button";
-import { Tooltip } from "@app/components/atoms/Tooltip";
+import { Accordion } from "@app/components/Accordion";
+import { Button } from "@app/components/Button";
+import { Tooltip } from "@app/components/Tooltip";
 import { useToggleState } from "@app/hooks/useToggleState";
 import { useAppDispatch } from "@app/store";
 import { questionsSliceActions } from "@app/store/reducers/questions";
@@ -16,7 +16,9 @@ interface QuestionItemProps {
   question: Question;
 }
 
-export const QuestionItem: React.FC<QuestionItemProps> = ({ question }) => {
+export const QuestionItemInternal: React.FC<QuestionItemProps> = ({
+  question,
+}) => {
   const {
     isOpen: isModalOpen,
     open: handleOpenModal,
@@ -81,3 +83,5 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({ question }) => {
     </React.Fragment>
   );
 };
+
+export const QuestionItem = React.memo(QuestionItemInternal);
