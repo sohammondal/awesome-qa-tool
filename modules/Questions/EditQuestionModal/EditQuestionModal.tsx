@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Button } from "@app/components/atoms/Button";
-import { Checkbox } from "@app/components/atoms/Checkbox";
-import { TextField, TextInput } from "@app/components/atoms/Input";
-import { Modal, ModalProps } from "@app/components/atoms/Modal";
+import { Button } from "@app/components/Button";
+import { Checkbox } from "@app/components/Checkbox";
+import { TextField, TextInput } from "@app/components/Input";
+import { Modal, ModalProps } from "@app/components/Modal";
 import { Errors, useForm } from "@app/hooks/useForm";
 import { useAppDispatch } from "@app/store";
 import { editQuestion } from "@app/store/reducers/questions";
