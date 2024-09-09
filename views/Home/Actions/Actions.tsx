@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "@app/components/atoms/Button";
+import { Button } from "@app/components/Button";
 import { useToggleState } from "@app/hooks/useToggleState";
 import { AddQuestionModal } from "@app/modules/Questions/AddQuestionModal/AddQuestionModal";
 import { useAppDispatch, useAppSelector } from "@app/store";

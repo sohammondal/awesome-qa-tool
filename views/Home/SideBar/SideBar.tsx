@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Typography } from "@app/components/atoms/Typography";
+import { Typography } from "@app/components/Typography";
 import { useAppSelector } from "@app/store";
 import { selectQuestions } from "@app/store/reducers/questions";
 
