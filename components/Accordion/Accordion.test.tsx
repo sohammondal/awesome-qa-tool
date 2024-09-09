@@ -4,8 +4,8 @@ import { Accordion } from "./Accordion";
 
 describe("Accordion", () => {
   it("should toggle content when clicked", async () => {
-    const title = "Section 1";
-    const content = "This is the content for section 1.";
+    const title = "Accordion Title";
+    const content = "This is the content for Accordion";
 
     render(<Accordion title={title}>{content}</Accordion>);
 
