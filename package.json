@@ -9,7 +9,8 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "prepare": "husky",
-    "test": "jest",
+    "test": "jest -noReport",
+    "test:ci": "jest -noReport --verbose",
     "test:watch": "jest --watch"
   },
   "dependencies": {
