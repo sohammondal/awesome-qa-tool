@@ -10,39 +10,47 @@ export interface FormState<T> {
   errors: Errors<T>;
 }
 
+enum ActionTypes {
+  SET_VALUE = "SET_VALUE",
+  SET_ERROR = "SET_ERROR",
+  RESET_ERRORS = "RESET_ERRORS",
+  SET_SUBMITTING = "SET_SUBMITTING",
+  RESET_STATE = "RESET_STATE",
+}
+
 type Action<T> =
-  | { type: "SET_VALUE"; name: keyof T; value: any }
-  | { type: "SET_ERROR"; name: keyof T; error: string }
-  | { type: "RESET_ERRORS" }
-  | { type: "SET_SUBMITTING"; value: boolean }
-  | { type: "RESET_STATE"; payload: T };
+  | { type: ActionTypes.SET_VALUE; name: keyof T; value: unknown }
+  | { type: ActionTypes.SET_ERROR; name: keyof T; error: string }
+  | { type: ActionTypes.RESET_ERRORS }
+  | { type: ActionTypes.SET_SUBMITTING; value: boolean }
+  | { type: ActionTypes.RESET_STATE; payload: T };
 
 const formReducer = <T>(
   state: FormState<T>,
   action: Action<T>
 ): FormState<T> => {
   switch (action.type) {
-    case "SET_VALUE":
+    case ActionTypes.SET_VALUE:
       return {
         ...state,
         values: { ...state.values, [action.name]: action.value },
       };
-    case "SET_ERROR":
+    case ActionTypes.SET_ERROR:
       return {
         ...state,
         errors: { ...state.errors, [action.name]: action.error },
       };
-    case "RESET_ERRORS":
+    case ActionTypes.RESET_ERRORS:
       return {
         ...state,
         errors: {},
       };
-    case "SET_SUBMITTING":
+    case ActionTypes.SET_SUBMITTING:
       return {
         ...state,
         isSubmitting: action.value,
       };
-    case "RESET_STATE":
+    case ActionTypes.RESET_STATE:
       return {
         ...state,
         values: action.payload,
@@ -72,13 +80,13 @@ export const useForm = <T extends Record<string, unknown>>({
     const { name, value, type, checked } = e.target as HTMLInputElement;
 
     dispatch({
-      type: "SET_VALUE",
+      type: ActionTypes.SET_VALUE,
       name,
       value: type === "checkbox" ? checked : value,
     });
 
     dispatch({
-      type: "SET_ERROR",
+      type: ActionTypes.SET_ERROR,
       name,
       error: "",
     });
@@ -88,15 +96,15 @@ export const useForm = <T extends Record<string, unknown>>({
     (callback?: () => Promise<void> | void) => async (e?: FormEvent) => {
       e?.preventDefault?.();
       if (validate()) {
-        dispatch({ type: "SET_SUBMITTING", value: true });
+        dispatch({ type: ActionTypes.SET_SUBMITTING, value: true });
         await callback?.();
-        dispatch({ type: "SET_SUBMITTING", value: false });
+        dispatch({ type: ActionTypes.SET_SUBMITTING, value: false });
         resetForm();
       }
     };
 
   const resetForm = () => {
-    dispatch({ type: "RESET_STATE", payload: initialValues });
+    dispatch({ type: ActionTypes.RESET_STATE, payload: initialValues });
   };
 
   const hasErrors = (errors = state.errors) =>
@@ -105,11 +113,11 @@ export const useForm = <T extends Record<string, unknown>>({
   const validate = () => {
     const newErrors: Errors<T> = validator?.(state.values) || {};
 
-    dispatch({ type: "RESET_ERRORS" });
+    dispatch({ type: ActionTypes.RESET_ERRORS });
 
     Object.entries(newErrors).map(([name, error]) => {
       dispatch({
-        type: "SET_ERROR",
+        type: ActionTypes.SET_ERROR,
         name,
         error: error || "",
       });
@@ -119,7 +127,7 @@ export const useForm = <T extends Record<string, unknown>>({
   };
 
   const clearErrors = () => {
-    dispatch({ type: "RESET_ERRORS" });
+    dispatch({ type: ActionTypes.RESET_ERRORS });
   };
 
   return {
